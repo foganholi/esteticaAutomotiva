@@ -1,7 +1,6 @@
 # Estética Automotiva - Backend
 
-Projeto desenvolvido para auxiliar o amigo **Foga** na criação de um sistema para uma **estética automotiva**. Este repositório contém a **API Backend**, responsável por gerenciar as operações principais como cadastro de clientes, agendamentos e autenticação de usuários com confirmação por e-mail. O frontend foi desenvolvido separadamente por Foga.
-
+Projeto desenvolvido para Projeto Academico na criação de um sistema para uma **estética automotiva**.  responsável por gerenciar as operações principais como cadastro de clientes, agendamentos e autenticação de usuários com confirmação por e-mail. 
 ## 🔧 Tecnologias Utilizadas
 
 - **Java 17**
@@ -36,59 +35,44 @@ Tecnologia utilizada:
 
 ## ⚙️ Como Executar
 
-1. Clone o projeto:
+## ⚙️ Como Executar
+1. Clone:
    ```bash
-   git clone https://github.com/0t4v14n0/EsteticaAutomotiva.git
-   ```
+   git clone https://github.com/foganholi/esteticaAutomotiva.git
 
 2. Configure o `application.properties`:
    ```properties
-   # Banco de Dados
-   spring.datasource.url=jdbc:mysql://localhost/automotiva
-   spring.datasource.username=root
-   spring.datasource.password=1234
+  spring.application.name=esteticaAutomotiva
 
-   # E-mail
-   spring.mail.host=smtp.seuservidordemail.com
-   spring.mail.port=587
-   spring.mail.username=seu_email
-   spring.mail.password=sua_senha
-   spring.mail.properties.mail.smtp.auth=true
-   spring.mail.properties.mail.smtp.starttls.enable=true
+spring.datasource.url=jdbc:mysql://localhost:3306/auto_estetica
+spring.datasource.username=root
+spring.datasource.password=SEU_PASSWORD_AQUI
 
-   # JTW secret
-   secret = ${JTW_SECRET:12345678}
+# JWT secret (corrige para JWT)
+secret=${JWT_SECRET:12345678}
 
-   # Configuracoes de URL
-   frontend.url=${FRONTEND_URL:http://localhost:3000}
-   backend.url=${BACKEND_URL:http://localhost:8080}
+frontend.url=${FRONTEND_URL:http://localhost:3000}
+backend.url=${BACKEND_URL:http://localhost:8080}
 
-   app.verify.url=${backend.url}/auth/confirmar-email?token=
+app.verify.url=${backend.url}/auth/confirmar-email?token=
+front.trocarSenhaURL=${frontend.url}/recuperar-senha?token=
 
-   front.trocarSenhaURL=${frontend.url}/recuperar-senha?token=
-   front.trocarSenhaURL=${frontend.url}/recuperar-senha/
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=SEU_EMAIL
+spring.mail.password=SEU_APP_PASSWORD
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
 
    ```
 
-3. Suba o banco de dados MySQL localmente com o nome `estetica`.
+Suba o MySQL local com o schema auto_estetica.
+Rodar:
+./mvnw spring-boot:run
+ou pela sua IDE.
+🔗 Conexão com o Frontend
+O backend expõe APIs REST consumidas pelo frontend (separado) para login, cadastro, agenda e perfil.
 
-4. Execute a aplicação:
-   - Via IDE (IntelliJ, Eclipse, etc.)
-   - Ou via terminal:
-     ```bash
-     ./mvnw spring-boot:run
-     ```
+📜 Licença
+Projeto de uso pessoal/colaborativo. Sugestões e melhorias são bem-vindas.
 
-## 🔗 Conexão com o Frontend
-
-Este backend se comunica via REST API com o frontend feito por Foga, onde os usuários interagem com a interface para agendar serviços e gerenciar seus dados.
-
-
-## 🤝 Colaboração
-
-- **Backend:** Otaviano  
-- **Frontend:** Foga
-
-## 📜 Licença
-
-Este projeto é de uso pessoal e colaborativo. Fique à vontade para sugerir melhorias ou adaptar ao seu negócio.
