@@ -30,28 +30,28 @@ public class AgendamentoController {
     @Transactional
     @PostMapping("/agendar")
     public ResponseEntity<?> agendar(@RequestBody @Valid DataRegistroAgenda dataRegistroConsulta,
-		       																		Authentication authentication) {
-        return ResponseEntity.ok(agendamentoService.agendar(dataRegistroConsulta, authentication.getName()));        
+	Authentication authentication) {
+        return ResponseEntity.ok(agendamentoService.agendar(dataRegistroConsulta, authentication.getName()));
     }
     
     @Transactional
     @PutMapping("/reagendar")
     public ResponseEntity<?> reagendar(@RequestBody @Valid DataAtualizarAgendamento dataAtualizarAgendamento,
-		       																		Authentication authentication) {
-        return ResponseEntity.ok(agendamentoService.reagendar(dataAtualizarAgendamento, authentication.getName()));        
+    Authentication authentication) {
+        return ResponseEntity.ok(agendamentoService.reagendar(dataAtualizarAgendamento, authentication.getName()));
     }
     
     @GetMapping("/agendas/{status}")
     public ResponseEntity<?> agendamentos(@PathVariable StatusAgendamento status,
-    													Authentication authentication) {
-        return ResponseEntity.ok(agendamentoService.agendamentos(authentication.getName(),status));        
+    Authentication authentication) {
+        return ResponseEntity.ok(agendamentoService.agendamentos(authentication.getName(),status));
     }
     
     @Transactional
     @DeleteMapping("/agendas/{id}")
     public ResponseEntity<?> deletarAgendamentos(@PathVariable Long id,
-    													Authentication authentication) {
-        return ResponseEntity.ok(agendamentoService.cancelarAgendamento(authentication.getName(),id));        
+    Authentication authentication) {
+        return ResponseEntity.ok(agendamentoService.cancelarAgendamento(authentication.getName(),id));
     }
 
 }
