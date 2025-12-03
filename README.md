@@ -42,26 +42,25 @@ Tecnologia utilizada:
 
 2. Configure o `application.properties`:
    ```
-  spring.application.name=esteticaAutomotiva
+   spring.application.name=esteticaAutomotiva
+   spring.datasource.url=jdbc:mysql://localhost:3306/auto_estetica
+   spring.datasource.username=root
+   spring.datasource.password=SEU_PASSWORD_AQUI
 
-spring.datasource.url=jdbc:mysql://localhost:3306/auto_estetica
-spring.datasource.username=root
-spring.datasource.password=SEU_PASSWORD_AQUI
+   secret=${JWT_SECRET:12345678}
 
-secret=${JWT_SECRET:12345678}
-
-frontend.url=${FRONTEND_URL:http://localhost:3000}
-backend.url=${BACKEND_URL:http://localhost:8080}
-
-app.verify.url=${backend.url}/auth/confirmar-email?token=
-front.trocarSenhaURL=${frontend.url}/recuperar-senha?token=
-
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=SEU_EMAIL
-spring.mail.password=SEU_APP_PASSWORD
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.starttls.enable=true
+   frontend.url=${FRONTEND_URL:http://localhost:3000}
+   backend.url=${BACKEND_URL:http://localhost:8080}
+   
+   app.verify.url=${backend.url}/auth/confirmar-email?token=
+   front.trocarSenhaURL=${frontend.url}/recuperar-senha?token=
+   
+   spring.mail.host=smtp.gmail.com
+   spring.mail.port=587
+   spring.mail.username=SEU_EMAIL
+   spring.mail.password=SEU_APP_PASSWORD
+   spring.mail.properties.mail.smtp.auth=true
+   spring.mail.properties.mail.smtp.starttls.enable=true
 
    
 
