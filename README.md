@@ -41,14 +41,13 @@ Tecnologia utilizada:
    git clone https://github.com/foganholi/esteticaAutomotiva.git
 
 2. Configure o `application.properties`:
-   ```properties
+   ```
   spring.application.name=esteticaAutomotiva
 
 spring.datasource.url=jdbc:mysql://localhost:3306/auto_estetica
 spring.datasource.username=root
 spring.datasource.password=SEU_PASSWORD_AQUI
 
-# JWT secret (corrige para JWT)
 secret=${JWT_SECRET:12345678}
 
 frontend.url=${FRONTEND_URL:http://localhost:3000}
@@ -64,7 +63,7 @@ spring.mail.password=SEU_APP_PASSWORD
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
-   ```
+   
 
 Suba o MySQL local com o schema auto_estetica.
 Rodar:
