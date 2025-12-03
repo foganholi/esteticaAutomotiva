@@ -33,7 +33,7 @@ Tecnologia utilizada:
 - Token único de verificação com expiração
 - Reenvio de e-mail em caso de expiração
 
-## ⚙️ Como Executar
+
 
 ## ⚙️ Como Executar
 1. Clone:
